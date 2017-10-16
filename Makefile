@@ -32,7 +32,7 @@ lem-hol: lem/blockScript.sml lem/evmScript.sml lem/keccakScript.sml lem/rlpScrip
 
 lem-pdf: lem/Evm-use_inc.pdf lem/Block-use_inc.pdf lem/Keccak-use_inc.pdf lem/Rlp-use_inc.pdf
 
-lem-ocaml: lem/evm.ml lem/word256.ml lem/word160.ml lem/word8.ml lem/keccak.ml lem/word4.ml lem/word64.ml lem/word32.ml lem/block.ml lem/rlp.ml
+lem-ocaml: lem/evm.ml lem/word256.ml lem/word160.ml lem/word8.ml lem/keccak.ml lem/word4.ml lem/word64.ml lem/word32.ml lem/block.ml lem/rlp0.ml
 
 lem-coq:
 	lem -coq lem/*.lem
@@ -74,8 +74,9 @@ lem/evm.ml: lem/evm.lem
 lem/block.ml: lem/block.lem
 	lem -ocaml lem/block.lem
 
-lem/rlp.ml: lem/rlp.lem
+lem/rlp0.ml: lem/rlp.lem
 	lem -ocaml lem/rlp.lem
+	mv lem/rlp.ml lem/rlp0.ml
 
 lem/keccak.ml: lem/keccak.lem
 	lem -ocaml lem/keccak.lem
